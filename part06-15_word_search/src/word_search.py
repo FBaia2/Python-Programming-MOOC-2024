@@ -1,34 +1,33 @@
 def find_words(search_term: str):
-    count_asterisk = 0
-    if "." not in search_term or "*" not in search_term:
-        with open("words.txt") as my_file:
-            for line in my_file:
-                # line.replace("\n", "")
-                if search_term in line:
-                    print(line)
-    elif "*" in search_term:
-        for i in search_term:
+    results = []
+    counter = 0
+    with open("words.txt") as my_file:
+        for line in my_file:
+            word = line.strip()
             if "*" in search_term:
-                count_asterisk +=1
-                if count_asterisk > 1:
-                    print("you can't have more then one asterisk")
+                if search_term[0] == "*":
+                    if word.endswith(search_term[1:]):
+                        results.append(word)
+                elif search_term[-1] == "*":
+                    if word.startswith(search_term[:-1]):
+                        results.append(word)
+            elif "." in search_term:
+                if len(word) != len(search_term):
+                    continue
                 else:
-                    if search_term[0] == "*":
-                    elif search_term[-1] == "*":
-
-
-    elif "." in search_term:
-
-
-
-
-
-
-
-
-
+                    match = True
+                for i in range(len(word)):
+                    if search_term[i] != "." and search_term[i] != word[i]:
+                        match = False
+                        break
+                if match:
+                    results.append(word)
+            else:
+                if word == search_term:
+                    results.append(word)
+    return results
 
 
 
-if __name__ == "__main__": 
-    print(find_words("vokes"))
+if __name__=="__main__":
+    print(find_words("*a"))
