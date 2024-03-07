@@ -1,12 +1,5 @@
 import random
 
-dice = {
-    "A": [3, 3, 3, 3, 3, 6],
-    "B": [2, 2, 2, 5, 5, 5],
-    "C": [1, 4, 4, 4, 4, 4]
-}
-
-
 def roll(die):
     """Rolls the die specified by the argument."""
     return random.choice(dice[die])
@@ -25,17 +18,12 @@ def play(die1, die2, times):
             ties += 1
     return (wins1, wins2, ties)
 
-if __name__=="__main__":
-    
-    for i in range(20):
-        print(roll("A"), " ", end="")
-    print()
-    for i in range(20):
-        print(roll("B"), " ", end="")
-    print()
-    for i in range(20):
-        print(roll("C"), " ", end="")
-    print()
+if __name__ == "__main__":
+    dice = {
+        "A": [3, 3, 3, 3, 3, 6],
+        "B": [2, 2, 2, 5, 5, 5],
+        "C": [1, 4, 4, 4, 4, 4]
+    }
 
     result = play("A", "C", 1000)
     print(result)
