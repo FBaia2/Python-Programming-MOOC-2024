@@ -18,4 +18,21 @@ class ShoppingList:
 
 # -------------------------
 # Write your solution here:
+
+    def total_units(self):
+        sum = 0
+        for i in range(1, self.number_of_items()+1):
+            sum += self.amount(i)
+        return sum
 # -------------------------
+
+
+
+
+if __name__ == "__main__":
+    my_list = ShoppingList()
+    my_list.add("bananas", 10)
+    my_list.add("apples", 5)
+    my_list.add("pineapple", 1)
+
+    print(total_units(my_list))
