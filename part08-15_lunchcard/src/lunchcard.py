@@ -25,9 +25,21 @@ class LunchCard:
 
 
 
-
-    
-    
+peters_card = LunchCard(20)
+graces_card = LunchCard(30)
+peters_card.eat_special()
+graces_card.eat_lunch()
+print(f"Peter: {peters_card}")
+print(f"Grace: {graces_card}")
+peters_card.deposit_money(20)
+graces_card.eat_special()
+print(f"Peter: {peters_card}")
+print(f"Grace: {graces_card}")
+peters_card.eat_lunch()
+peters_card.eat_lunch()
+graces_card.deposit_money(50)
+print(f"Peter: {peters_card}")
+print(f"Grace: {graces_card}")
 # card = LunchCard(10)
 # print(card)
 # card.deposit_money(15)
