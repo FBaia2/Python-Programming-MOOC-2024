@@ -19,11 +19,11 @@ class ShoppingList:
 # -------------------------
 # Write your solution here:
 
-    def total_units(self):
-        sum = 0
-        for i in range(1, self.number_of_items()+1):
-            sum += self.amount(i)
-        return sum
+def total_units(self):
+    sum = 0
+    for i in range(1, self.number_of_items()+1):
+        sum += self.amount(i)
+    return sum
 # -------------------------
 
 
