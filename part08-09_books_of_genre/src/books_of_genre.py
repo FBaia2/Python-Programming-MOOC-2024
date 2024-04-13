@@ -30,5 +30,5 @@ if __name__ == "__main__" :
     books = [python, everest, norma, Book("The Snowman", "Jo Nesbø", "crime", 2007)]
 
     print("Books in the crime genre:")
-    for book in books_of_genre(books, "crime"):
+    for book in books_of_genre(books, "crime"):sqws
         print(f"{book.author}: {book.name}")e
