@@ -11,15 +11,15 @@ class Present:
 class Box:
     def __init__(self):
         self.presents = []
-        self.total_weight = 0
 
     def add_present(self, present: Present):
         self.presents.append(present)
-        self.total_weight += present.weight
 
-    def total_weight(self):
-        return self.total_weight
+    def total_weight(self):  # Now it's a method, not an attribute
+        return sum(present.weight for present in self.presents)
 
+
+        return sum
 if __name__ == "__main__" :
 
     book = Present("ABC Book", 2)
